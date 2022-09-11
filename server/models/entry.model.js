@@ -11,6 +11,6 @@ const MindfulMomentsSchema = mongoose.Schema(
     { timestamps: true}
 );
 
-const MindfulMoments = mongoose.model("MindfulMoment", MindfulMomentsSchema);
+const Entry = mongoose.model("Entry", MindfulMomentsSchema);
 
-module.exports = MindfulMoments;
+module.exports = Entry;
