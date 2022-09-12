@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import axios from "axios";
+// Get the Home page to display the UI button and link to the create route
+// Create a header component to display the name of the project
 
 const HomePage = () => {
     

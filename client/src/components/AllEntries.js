@@ -32,7 +32,7 @@ import {Link} from "react-router-dom";
                     list.map((entry)=>(
                         <div>
                         <p> {entry.createdAt} {entry.journalEntry} </p>
-                        <p><Link to ={`/reflect/${entry._id}`}>Reflect</Link></p>
+                        <p><Link to ={`/edit/${entry._id}`}>Reflect</Link></p>
                         <p><Link to ={`/delete/${entry._id}`}>Delete</Link></p>
                         </div>
                     ))
