@@ -22,8 +22,12 @@ const NewEntry = () =>{
     return (
         <form onSubmit={submitHandler}>
             <div>
-            <textarea type="text" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
+                <h2>What are you grateful for today?</h2>
             </div>
+            <div>
+            <textarea type="text" rows="5" col="40" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
+            </div>
+            <input type="Submit" value="Save"></input>
         </form>
     )
 };
