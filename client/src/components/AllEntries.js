@@ -14,17 +14,6 @@ import {Link} from "react-router-dom";
             })
         },[])
 
-        // const deleteHandler = (entryId) =>{
-        //     axios.delete(`http://localhost:8000/api/entry/${entryId}`)
-        //     .then((res)=>{
-        //         const newList = list.filter((entry)=>{
-        //             return entry._id !== entryId
-        //         })
-        //         setList(newList)
-        //     }).catch((err)=>{
-        //         console.log(err.response)
-        //     })
-        // }
 
         return(
             <div>
@@ -33,7 +22,6 @@ import {Link} from "react-router-dom";
                         <div>
                         <p> {entry.createdAt} {entry.journalEntry} </p>
                         <p><Link to ={`/edit/${entry._id}`}>Reflect</Link></p>
-                        <p><Link to ={`/delete/${entry._id}`}>Delete</Link></p>
                         </div>
                     ))
                 }

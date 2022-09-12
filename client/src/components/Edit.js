@@ -7,6 +7,8 @@ import axios from "axios";
 
 const EditEntry = () =>{
     const {id} = useParams()
+    const [journalEntry, setJournalEntry] = useState("");
+    const navigate = useNavigate();
 
     useEffect (()=>{
         axios.get(`http://localhost:8000/api/entry/${id}`)
@@ -17,8 +19,6 @@ const EditEntry = () =>{
         .catch((err)=>{})
     },[])
 
-    const [journalEntry, setJournalEntry] = useState("");
-    const navigate = useNavigate();
     // const [errors, setErrors] = useState({})
 
 
@@ -34,13 +34,21 @@ const EditEntry = () =>{
         })
     }
 
+    const deleteHandler = () =>{
+        axios.delete(`http://localhost:8000/api/entry/${id}`)
+        .then((res)=>{
+            navigate("/entries") 
+        })
+        .catch(err=>console.log(err))
+    }
+
     return(
         <div>
             <form onSubmit={editHandler}>
                 <h2>Pause and Reflect</h2>
                 <label>Entry creation:</label>
                 <input
-                    type="date"
+                    type="text"
                     value={journalEntry.createdAt}
                 ></input>
                 <label>Entry:</label>
@@ -50,6 +58,7 @@ const EditEntry = () =>{
                     onChange={(e)=> setJournalEntry(e.target.value)}
                     ></input>
                 <input type="Submit" value="Update Entry"></input>
+                <button onClick={deleteHandler}>Delete</button>
             </form>
         </div>
     )
