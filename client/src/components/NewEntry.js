@@ -24,8 +24,8 @@ const NewEntry = () =>{
             <div>
                 <h2>What are you grateful for today?</h2>
             </div>
-            <div>
-            <textarea type="text" rows="5" col="40" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
+            <div class="form-floating" >
+            <textarea class="form-control" type="text" rows="5" col="40" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
             </div>
             <input type="Submit" value="Save"></input>
         </form>

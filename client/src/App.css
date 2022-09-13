@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  padding: 25px;
+}
+.form-floating {
+
+  display: block;
+  border: 1px black solid;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-family: "Papyrus", fantasy;
+
 }
 
 .App-logo {
