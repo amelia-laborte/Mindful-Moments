@@ -20,7 +20,7 @@ import {Link} from "react-router-dom";
                 {
                     list.map((entry)=>(
                         <div>
-                        <p> {entry.createdAt} {entry.journalEntry} </p>
+                        <p> {new Date(entry.createdAt).toLocaleDateString()} {entry.journalEntry} </p>
                         <p><Link to ={`/edit/${entry._id}`}>Reflect</Link></p>
                         </div>
                     ))
