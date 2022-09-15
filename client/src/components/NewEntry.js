@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const NewEntry = () =>{
     const [journalEntry, setJournalEntry] = useState ("")
-    // const [errors, setErrors] = useState ({})
+    const [errors, setErrors] = useState ({})
     const navigate = useNavigate()
 
     const submitHandler = (e) => {
@@ -16,7 +16,7 @@ const NewEntry = () =>{
             navigate("/entries")
         }).catch((err)=>{
             console.log(err)
-            // setErrors(err.response.data.error)
+            setErrors(err.response.data.error)
         })
     }
     return (
@@ -24,6 +24,7 @@ const NewEntry = () =>{
             <div>
                 <h2>What are you grateful for today?</h2>
             </div>
+            <br></br>{errors.journalEntry ? <span>{errors.journalEntry.message}</span> : null}
             <div class="form-floating" >
             <textarea class="form-control" type="text" rows="5" col="40" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
             </div>

@@ -2,9 +2,6 @@ import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-//Fix delete functionality...it deletes every entry on the allEntries 
-// Get the actual createdAt in db so show up on UI
-
 const EditEntry = () =>{
     const {id} = useParams()
 
@@ -17,7 +14,7 @@ const EditEntry = () =>{
         .catch((err)=>{})
     },[])
 
-    // const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({})
     const [journalEntry, setJournalEntry] = useState("");
     const navigate = useNavigate();
 
@@ -31,6 +28,7 @@ const EditEntry = () =>{
         })
         .catch((err)=>{
             console.log(err)
+            setErrors(err.response.data.error)
         })
     }
 
@@ -41,6 +39,7 @@ const EditEntry = () =>{
                     <h2>Pause and Reflect</h2>
 
                     <label>Entry:</label>
+                    <br></br>{errors.journalEntry ? <span>{errors.journalEntry.message}</span> : null}
                     <div class="form-floating" >
                     <input class="form-control" rows="5" col="40"
                         type="text"
