@@ -26,7 +26,7 @@ const NewEntry = () =>{
             </div>
             <br></br>{errors.journalEntry ? <span>{errors.journalEntry.message}</span> : null}
             <div class="form-floating" >
-            <textarea class="form-control" type="text" rows="5" col="40" onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
+            <textarea class="form-control" type="text"  onChange={(e)=> setJournalEntry(e.target.value)}></textarea>
             </div>
             <input class="btn btn-light" type="Submit" value="Save"></input>
         </form>

@@ -8,7 +8,7 @@ const HomePage = () => {
     return (
         <div>
             <h2>This is a space where you get to jot down all that you are grateful for.</h2>
-            <Link to={`/create`}>
+            <Link className="Links" to={`/create`}>
                 <button type="button" class="btn btn-light" >Begin My Journey</button>
             </Link>
         </div>
